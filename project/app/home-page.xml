@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="RideShare App" icon="" />
+    <GridLayout rows="*, auto">
+        <ContentView row="0">
+            <MapView id="map" latitude="{{ userLat }}" longitude="{{ userLng }}" zoom="15" />
+        </ContentView>
+        <StackLayout row="1" class="p-4 bg-white">
+            <TextField hint="Where to?" tap="{{ onSearchTap }}" editable="false" class="p-3 bg-gray-100 rounded-lg" />
+            <Button text="Request Ride" tap="{{ onRequestRide }}" class="-primary my-2" isEnabled="{{ canRequestRide }}" />
+            <Label text="{{ statusMessage }}" class="text-center text-gray-600" textWrap="true" />
+        </StackLayout>
+    </GridLayout>
+</Page>
